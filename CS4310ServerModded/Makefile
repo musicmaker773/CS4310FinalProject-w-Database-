@@ -13,7 +13,7 @@ common.o: common.h common.c
 myqueue.o: myqueue.h myqueue.c
 
 tcps: tcpserver.c $(COMMON_OBJS) $(SERVER_OBJS)
-	$(CC) $(CFLAGS) -o tcps tcpserver.c -l sqlite3 $(COMMON_OBJS) $(SERVER_OBJS)
+	$(CC) $(CFLAGS) -o tcps tcpserver.c -lpthread -lsqlite3 $(COMMON_OBJS) $(SERVER_OBJS)
 
 clean:
 	rm -rf *.dSYM tcps
